@@ -1,35 +1,41 @@
 /* style.css */
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f8f9fa;
 }
-header {
-    background: linear-gradient(90deg, #007bff, #0056b3);
-    color: white;
-}
-footer {
-    background-color: #333;
-    color: white;
-}
-#drop-zone {
-    border: 2px dashed #007bff;
-    border-radius: 10px;
-    padding: 20px;
+
+h2 {
+    color: #007bff;
     text-align: center;
-    background-color: #e9ecef;
-    transition: background-color 0.3s;
+    margin-bottom: 20px;
 }
-#drop-zone.drag-over {
-    background-color: #d1ecf1;
+
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-.preview {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
-    margin-top: 20px;
+
+footer {
+    background-color: #343a40;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
 }
-.preview img, .preview video {
-    max-width: 200px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+
+#login-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
+button {
+    transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #0056b3;
+    color: white;
+}
+
