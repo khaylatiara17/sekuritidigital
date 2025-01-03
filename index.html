@@ -8,49 +8,91 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
 </head>
 <body>
-    <!-- Header -->
-    <header class="text-center py-4">
-        <h1>Platform Edukasi Anti-Kejahatan</h1>
-        <p class="lead">"Together, we prevent crime through education"</p>
-    </header>
-
-    <!-- Main Content -->
-    <div class="container my-5">
-        <div class="row">
-            <!-- Drag & Drop Zone -->
-            <div class="col-md-8">
-                <h2>Unggah Materi Edukasi</h2>
-                <div id="drop-zone">
-                    <p>Tarik dan lepaskan gambar atau video di sini</p>
-                    <p><strong>atau</strong></p>
-                    <input type="file" id="file-input" multiple accept="image/*,video/*" class="form-control">
-                </div>
-                <div class="preview" id="preview"></div>
-            </div>
-
-            <!-- Konten Formulir -->
-            <div class="col-md-4">
-                <h3>Tambah Konten</h3>
-                <form id="content-form">
-                    <div class="mb-3">
-                        <label for="title" class="form-label">Judul</label>
-                        <input type="text" id="title" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label for="description" class="form-label">Deskripsi</label>
-                        <textarea id="description" class="form-control" rows="4" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-success">Tambah Materi</button>
-                </form>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Anti-Kejahatan</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#artikel">Artikel</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#kuesioner">Kuesioner</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#butuh-bantuan">Butuh Bantuan</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#donasi">Donasi</a>
+                    </li>
+                </ul>
             </div>
         </div>
-    </div>
+    </nav>
+
+    <!-- Login Section -->
+    <section id="login" class="container my-5">
+        <h2 class="text-center">Login Developer</h2>
+        <form id="login-form" class="w-50 mx-auto">
+            <div class="mb-3">
+                <label for="username" class="form-label">Username</label>
+                <input type="text" id="username" class="form-control" required>
+            </div>
+            <div class="mb-3">
+                <label for="password" class="form-label">Password</label>
+                <input type="password" id="password" class="form-control" required>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Login</button>
+        </form>
+    </section>
+
+    <!-- Home Section -->
+    <section id="home" class="container my-5">
+        <h2>Selamat Datang di Platform Edukasi Anti-Kejahatan</h2>
+        <p>"Mari bersama-sama cegah kejahatan melalui edukasi dan aksi nyata."</p>
+    </section>
+
+    <!-- Artikel Section -->
+    <section id="artikel" class="container my-5">
+        <h2>Artikel Edukasi</h2>
+        <div id="article-content">
+            <p>Belum ada artikel. Silakan login sebagai developer untuk menambahkan.</p>
+        </div>
+    </section>
+
+    <!-- Kuesioner Section -->
+    <section id="kuesioner" class="container my-5">
+        <h2>Kuesioner</h2>
+        <p>Berikan jawaban Anda pada kuis dan studi kasus yang kami sediakan.</p>
+        <button class="btn btn-success">Mulai Kuesioner</button>
+    </section>
+
+    <!-- Butuh Bantuan Section -->
+    <section id="butuh-bantuan" class="container my-5">
+        <h2>Butuh Bantuan?</h2>
+        <p>Hubungi kami melalui email di <a href="mailto:support@antikejahatan.com">support@antikejahatan.com</a></p>
+    </section>
+
+    <!-- Donasi Section -->
+    <section id="donasi" class="container my-5">
+        <h2>Dukung Kami</h2>
+        <p>Bantu kami untuk terus menyediakan edukasi gratis dengan donasi Anda.</p>
+        <button class="btn btn-warning">Donasi Sekarang</button>
+    </section>
 
     <!-- Footer -->
-    <footer class="text-center py-3">
+    <footer class="text-center py-3 bg-dark text-white">
         <p>&copy; 2025 Platform Edukasi Anti-Kejahatan. All Rights Reserved.</p>
     </footer>
 
     <script src="script.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
