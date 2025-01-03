@@ -6,42 +6,6 @@
     <title>Platform Edukasi Anti-Kejahatan</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f8f9fa;
-        }
-        header {
-            background: linear-gradient(90deg, #007bff, #0056b3);
-            color: white;
-        }
-        footer {
-            background-color: #333;
-            color: white;
-        }
-        #drop-zone {
-            border: 2px dashed #007bff;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            background-color: #e9ecef;
-            transition: background-color 0.3s;
-        }
-        #drop-zone.drag-over {
-            background-color: #d1ecf1;
-        }
-        .preview {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 20px;
-        }
-        .preview img, .preview video {
-            max-width: 200px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-    </style>
 </head>
 <body>
     <!-- Header -->
@@ -87,71 +51,6 @@
         <p>&copy; 2025 Platform Edukasi Anti-Kejahatan. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // Referensi elemen
-        const dropZone = document.getElementById('drop-zone');
-        const fileInput = document.getElementById('file-input');
-        const preview = document.getElementById('preview');
-
-        // Fungsi untuk menangani file
-        function handleFiles(files) {
-            Array.from(files).forEach(file => {
-                const fileReader = new FileReader();
-
-                fileReader.onload = () => {
-                    const element = file.type.startsWith('image/') ? 
-                        `<img src="${fileReader.result}" alt="${file.name}">` : 
-                        `<video controls>
-                            <source src="${fileReader.result}" type="${file.type}">
-                            Browser Anda tidak mendukung video.
-                        </video>`;
-
-                    preview.innerHTML += element;
-                };
-
-                fileReader.readAsDataURL(file);
-            });
-        }
-
-        // Drag & Drop Events
-        dropZone.addEventListener('dragover', (e) => {
-            e.preventDefault();
-            dropZone.classList.add('drag-over');
-        });
-
-        dropZone.addEventListener('dragleave', () => {
-            dropZone.classList.remove('drag-over');
-        });
-
-        dropZone.addEventListener('drop', (e) => {
-            e.preventDefault();
-            dropZone.classList.remove('drag-over');
-
-            const files = e.dataTransfer.files;
-            handleFiles(files);
-        });
-
-        // Input File Event
-        fileInput.addEventListener('change', (e) => {
-            const files = e.target.files;
-            handleFiles(files);
-        });
-
-        // Form Submit Event
-        document.getElementById('content-form').addEventListener('submit', (e) => {
-            e.preventDefault();
-
-            const title = document.getElementById('title').value.trim();
-            const description = document.getElementById('description').value.trim();
-
-            if (title && description) {
-                alert(`Materi dengan judul "${title}" berhasil ditambahkan.`);
-                document.getElementById('content-form').reset();
-            }
-        });
-    </script>
-    
     <script src="script.js" defer></script>
-    
 </body>
 </html>
